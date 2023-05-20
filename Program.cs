@@ -10,7 +10,6 @@ class ConsoleApp2
         int number;
         bool isValidNumber = int.TryParse(input, out number);
 
-
         if (isValidNumber)
         {
             if (number >= 2)
@@ -34,6 +33,8 @@ class ConsoleApp2
         {
             Console.WriteLine("Invalid input. Please enter a valid number.");
         }
+        Console.WriteLine("Program ended press enter to exit.");
+        Console.ReadLine();
     }
 
     static bool IsPrime(int number)
