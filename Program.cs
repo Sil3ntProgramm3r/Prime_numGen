@@ -1,7 +1,7 @@
 ﻿using System;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-class PrimeNumberGenerator
+public class PrimeNumberGenerator
 {
     static void Main()
     {
