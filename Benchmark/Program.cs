@@ -7,11 +7,16 @@ BenchmarkRunner.Run<PrimeNumBenchmark>();
 
 [MemoryDiagnoser]
 public class PrimeNumBenchmark
-{
+{// Run the benchmark to determine which implementation is faster (more performance and which takes less memory)
     [Benchmark]
-    public void Method1()
+    public void PrimeNumbersUpToMethod()
     {
         PrimeNumberGenerator.PrimeNumbersUpTo(10000);
     }
 
+    [Benchmark]
+    public void PrintPrimeNumbersMethod()
+    {
+        PrimeNumberGenerator.PrintPrimeNumbers(10000);
+    }
 }
