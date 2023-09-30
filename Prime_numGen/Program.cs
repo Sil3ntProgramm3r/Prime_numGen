@@ -19,7 +19,14 @@ public class PrimeNumberGenerator
             if (int.TryParse(input, out int number) && number > 1)
             {
                 Console.WriteLine("Prime numbers:");
-                PrintPrimeNumbers(number);
+                //PrintPrimeNumbers(number);
+                var cts = new CancellationTokenSource();
+                cts.Cancel();
+                foreach (var i in PrintPrimeNumbersIterator(number))
+                {
+                    Console.WriteLine(i);
+                }
+                var x = PrintPrimeNumbersIterator(number).ToList();
             }
             else
             {
@@ -34,6 +41,17 @@ public class PrimeNumberGenerator
         {
             if (IsPrime(i))
                 Console.WriteLine(i);
+        }
+    }
+
+    public static IEnumerable<int> PrintPrimeNumbersIterator(int number)
+    {
+        for (int i = 2; i <= number; i++)
+        {
+            if (IsPrime(i))
+            {
+                yield return i;
+            }
         }
     }
 
